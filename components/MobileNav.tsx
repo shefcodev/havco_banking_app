@@ -75,7 +75,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         <p
                           className={cn(
                             { '!text-white': isActive },
-                            'sidebar-label'
+                            'text-16 font-semibold text-black-2'
                           )}
                         >
                           {label}
@@ -84,8 +84,12 @@ const MobileNav = ({ user }: MobileNavProps) => {
                     </SheetClose>
                   );
                 })}
+
+                {/* USER */}
               </nav>
             </SheetClose>
+
+            {/* FOOTER */}
           </div>
         </SheetContent>
       </Sheet>
