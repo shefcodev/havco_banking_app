@@ -40,6 +40,7 @@ const CustomInput = ({
                 placeholder={placeholder}
                 className='input-class'
                 type={name}
+                id={name}
                 {...field}
               />
             </FormControl>
