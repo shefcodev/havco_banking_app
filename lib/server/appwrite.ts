@@ -40,12 +40,3 @@ export async function createAdminClient() {
     },
   };
 }
-
-    // const session = await account.createEmailPasswordSession(email, password);
-
-    // cookies().set('appwrite-session', session.secret, {
-    //   path: '/',
-    //   httpOnly: true,
-    //   sameSite: 'strict',
-    //   secure: true,
-    // });
