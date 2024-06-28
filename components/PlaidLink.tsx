@@ -8,6 +8,7 @@ import {
 } from 'react-plaid-link';
 import { createLinkToken } from '@/lib/actions/user.actions';
 import { exchangePublicToken } from '@/lib/actions/user.actions';
+import Image from 'next/image';
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const [token, setToken] = useState('');
@@ -35,8 +36,6 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
 
   const { open, ready } = usePlaidLink(config);
 
-  console.log(open, ready, 'see here!');
-
   return (
     <Fragment>
       {variant === 'primary' ? (
@@ -48,9 +47,33 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
           Connect bank
         </Button>
       ) : variant === 'ghost' ? (
-        <Button>Connect bank</Button>
+        <Button
+          onClick={() => open()}
+          className='plaidlink-ghost'
+          variant='ghost'
+        >
+          <Image
+            src='/icons/connect-bank.svg'
+            alt='connect bank'
+            width={24}
+            height={24}
+          />
+          <p className='hidden text-[16px] font-semibold text-black-2 xl:block'>
+            Connect bank
+          </p>
+        </Button>
       ) : (
-        <Button>Connect bank</Button>
+        <Button onClick={() => open()} className='plaidlink-default'>
+          <Image
+            src='/icons/connect-bank.svg'
+            alt='connect bank'
+            width={24}
+            height={24}
+          />
+          <p className='max-xl:hidden text-[16px] font-semibold text-black-2 '>
+            Connect bank
+          </p>
+        </Button>
       )}
     </Fragment>
   );

@@ -1,4 +1,9 @@
-const Header = ({ type = 'title', title, user, subtext }: HeaderBoxProps) => {
+const HeaderBox = ({
+  type = 'title',
+  title,
+  user,
+  subtext,
+}: HeaderBoxProps) => {
   return (
     <div className='header-box'>
       <h1 className='header-box-title'>
@@ -12,4 +17,4 @@ const Header = ({ type = 'title', title, user, subtext }: HeaderBoxProps) => {
   );
 };
 
-export default Header;
+export default HeaderBox;
