@@ -1,4 +1,5 @@
 import HeaderBox from '@/components/HeaderBox';
+import TransactionsTable from '@/components/TransactionsTable';
 
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 import { getAccounts, getAccount } from '@/lib/actions/bank.actions';
@@ -38,7 +39,7 @@ const TransactionHistory = async ({
               {account?.data.officialName}
             </p>
             <p className='text-14 font-semibold tracking-[1.1px] text-white'>
-              ●●●● ●●●● ●●●●{' '}
+              ●●●● ●●●● ●●●● {' '}
               <span className='text-16'>{account?.data.mask}</span>
             </p>
           </div>
@@ -50,6 +51,10 @@ const TransactionHistory = async ({
             </p>
           </div>
         </div>
+
+        <section className='flex w-full flex-col gap-6'>
+          <TransactionsTable transactions={account.transactions} />
+        </section>
       </div>
     </section>
   );
